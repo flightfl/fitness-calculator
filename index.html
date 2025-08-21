@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="fitness, BMI, body fat, personal stats">
+    <title>CS144 Project 1</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <!-- Google Fonts link-->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Bryan's Fitness Stats</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#stats">My Stats</a></li>
+                <li><a href="#calculators">Calculators</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm Bryan, a senior CSE student from UCLA. This page shares my personal fitness stats and some useful fitness calculators.</p>
+            <img src="avatar.png" alt="Bryan's profile picture" class="responsive-image">
+        </section>
+
+        <!-- This section is to demonstrate the Grid layout -->
+        <section id="stats">
+            <h2>My Fitness Stats</h2>
+            <div class="grid-container">
+                <!-- Grid items using grid layout -->
+                <div class="grid-item item1">
+                    <h3>Physical Measurements</h3>
+                    <p>Here are my current physical stats that I monitor regularly.</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Height</h4>
+                    <p>175 cm</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Weight</h4>
+                    <p>70 kg</p>
+                </div>
+                <div class="grid-item">
+                    <h4>BMI</h4>
+                    <p>22.9</p>
+                    <p>Normal range</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Body Fat %</h4>
+                    <p>15%</p>
+                </div>
+                <div class="grid-item">
+                    <h4>Waist</h4>
+                    <p>32 inches</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- This section is to demonstrate the Flexbox layout -->
+        <section id="calculators">
+            <h2>Fitness Calculators</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <h3>BMI Calculator</h3>
+                    <p>BMI Formula: weight(kg) / height²(m)</p>
+                    
+                    <form>
+                        <fieldset>
+                            <legend>Calculate BMI</legend>
+                            
+                            <div class="form-group">
+                                <label for="bmi-height">Height (cm):</label>
+                                <input type="number" id="bmi-height" min="100" max="250" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bmi-weight">Weight (kg):</label>
+                                <input type="number" id="bmi-weight" min="30" max="300" required>
+                            </div>
+                            
+                            <button type="button" id="calculate-bmi">Calculate</button>
+                            
+                            <div class="result-container">
+                                <p>BMI: <span id="bmi-result">-</span></p>
+                                <p>Category: <span id="bmi-category">-</span></p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                
+                <div class="flex-item">
+                    <h3>Body Fat Calculator</h3>
+                    <p>Using the U.S. Navy method</p>
+                    
+                    <form>
+                        <fieldset>
+                            <legend>Calculate Body Fat</legend>
+                            
+                            <div class="form-group">
+                                <label for="gender">Gender:</label>
+                                <select id="gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bf-height">Height (cm):</label>
+                                <input type="number" id="bf-height" min="100" max="250" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="waist">Waist (cm):</label>
+                                <input type="number" id="waist" min="50" max="200" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="neck">Neck (cm):</label>
+                                <input type="number" id="neck" min="20" max="80" required>
+                            </div>
+                            
+                            <div class="form-group female-only" style="display: none;">
+                                <label for="hip">Hip (cm):</label>
+                                <input type="number" id="hip" min="50" max="200">
+                            </div>
+                            
+                            <button type="button" id="calculate-bodyfat">Calculate</button>
+                            
+                            <div class="result-container">
+                                <p>Body Fat %: <span id="bodyfat-result">-</span></p>
+                                <p>Category: <span id="bodyfat-category">-</span></p>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- This section is to demonstrate the Nested List -->
+        <section>
+            <h2>Fitness Categories</h2>
+            <ul class="outer-list">
+                <li>Cardio Training
+                    <ul class="inner-list">
+                        <li>Running</li>
+                        <li>Swimming</li>
+                        <li>Cycling</li>
+                    </ul>
+                </li>
+                <li>Strength Training
+                    <ul class="inner-list">
+                        <li>Weight Lifting</li>
+                        <li>Bodyweight Exercises</li>
+                        <li>Resistance Bands</li>
+                    </ul>
+                </li>
+                <li>Flexibility
+                    <ul class="inner-list">
+                        <li>Yoga</li>
+                        <li>Stretching</li>
+                        <li>Pilates</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        
+        <!-- This section is to demonstrate the Form -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <fieldset>
+                    <legend>Send Message</legend>
+                    
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fitness-level">Fitness Level:</label>
+                        <select id="fitness-level" name="fitness-level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="question-type">Question Type:</label>
+                        <input type="text" id="question-type" name="question-type" placeholder="e.g., workout advice, nutrition, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CS144 Project 1. Bryan Wu.</p>
+        <a href="https://www.cdc.gov/healthyweight/" target="_blank">CDC</a> |
+        <a href="https://www.mayoclinic.org/healthy-lifestyle" target="_blank">Mayo Clinic</a> |
+        <a href="https://www.health.harvard.edu/" target="_blank">Harvard Health</a>
+    </footer>
+
+</body>
+</html>
